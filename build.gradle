@@ -1,0 +1,23 @@
+apply plugin: 'groovy'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+mainClassName = "coursera.SplunkDemo"
+
+repositories {
+	mavenCentral()
+	maven {
+		url "http://splunk.artifactoryonline.com/splunk/ext-releases-local"
+	}
+}
+
+dependencies {
+	compile 'org.codehaus.groovy:groovy-all:2.4.7'
+	compile 'com.splunk:splunk:1.5.0.0'
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.14'
+}
+
